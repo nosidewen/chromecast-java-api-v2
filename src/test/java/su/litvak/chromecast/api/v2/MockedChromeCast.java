@@ -175,7 +175,7 @@ final class MockedChromeCast {
         }
 
         Status status() {
-            return new Status(new Volume(1f, false, Volume.DEFAULT_INCREMENT,
+            return new Status(new Volume(1d, false, Volume.DEFAULT_INCREMENT,
                         Volume.DEFAULT_INCREMENT.doubleValue(), Volume.DEFAULT_CONTROL_TYPE),
                     runningApplications, false, true);
         }

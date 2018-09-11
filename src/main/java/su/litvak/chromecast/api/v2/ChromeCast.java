@@ -273,7 +273,7 @@ public class ChromeCast {
     /**
      * @param level volume level from 0 to 1 to set
      */
-    public final void setVolume(float level) throws IOException {
+    public final void setVolume(double level) throws IOException {
         channel().setVolume(new Volume(level, false, Volume.DEFAULT_INCREMENT,
             Volume.DEFAULT_INCREMENT.doubleValue(), Volume.DEFAULT_CONTROL_TYPE));
     }
@@ -286,9 +286,9 @@ public class ChromeCast {
      * @throws IOException
      * @see <a href="https://developers.google.com/cast/docs/design_checklist/sender#sender-control-volume">sender</a>
      */
-    public final void setVolumeByIncrement(float level) throws IOException {
+    public final void setVolumeByIncrement(double level) throws IOException {
         Volume volume = this.getStatus().volume;
-        float total = volume.level;
+        double total = volume.level;
 
         if (volume.increment <= 0f) {
             throw new ChromeCastException("Volume.increment is <= 0");

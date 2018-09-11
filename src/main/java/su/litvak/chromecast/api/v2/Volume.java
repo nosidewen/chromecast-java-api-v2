@@ -28,7 +28,7 @@ public class Volume {
     static final String DEFAULT_CONTROL_TYPE = "attenuation";
     @JsonProperty
     @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-    public final Float level;
+    public final Double level;
     @JsonProperty
     public final boolean muted;
 
@@ -40,14 +40,14 @@ public class Volume {
     public final String controlType;
 
     public Volume() {
-        level = new Float(-1);
+        level = new Double(-1);
         muted = false;
         increment = DEFAULT_INCREMENT;
         stepInterval = DEFAULT_INCREMENT.doubleValue();
         controlType = DEFAULT_CONTROL_TYPE;
     }
 
-    public Volume(@JsonProperty("level") Float level,
+    public Volume(@JsonProperty("level") Double level,
             @JsonProperty("muted") boolean muted,
             @JsonProperty("increment") Float increment,
             @JsonProperty("stepInterval") Double stepInterval,
